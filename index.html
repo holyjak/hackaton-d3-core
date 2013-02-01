@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+  <title>D3 experiment from the Comoyo hackaton</title>
+  <script src="http://d3js.org/d3.v3.js"></script>
+  <style>
+ 
+    .axis path,
+    .axis line {
+        fill: none;
+        stroke: #000;
+        shape-rendering: crispEdges;
+    }
+
+    .x.axis path {
+        /*display: none;*/
+    }
+
+
+    .line {
+        fill: none;
+        stroke: steelblue;
+        stroke-width: 1.5px;
+    }
+  </style>
+  <script src="oneuser_history.js"></script>
+</head>
+<body>
+  <p>A wonderful D3-driven graph is hopefully shown below:</p>
+  <svg id="userHistory"></svg>
+  <script type="text/javascript">
+
+    var chart = Chart();
+
+    function setUserName() {
+       chart.draw("my_movies.json");
+       console.log("Done drawing the chart " + d3.time.format("%X")(new Date()));
+    }
+
+    setUserName();
+  </script>
+
+</body>
+</html>
